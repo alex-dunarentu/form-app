@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/alex-dunarentu/form-app.git/static/css/main.16b59257.chunk.css",
-    "main.js": "/alex-dunarentu/form-app.git/static/js/main.3f12537f.chunk.js",
-    "main.js.map": "/alex-dunarentu/form-app.git/static/js/main.3f12537f.chunk.js.map",
-    "runtime-main.js": "/alex-dunarentu/form-app.git/static/js/runtime-main.21ac1948.js",
-    "runtime-main.js.map": "/alex-dunarentu/form-app.git/static/js/runtime-main.21ac1948.js.map",
-    "static/js/2.67076fda.chunk.js": "/alex-dunarentu/form-app.git/static/js/2.67076fda.chunk.js",
-    "static/js/2.67076fda.chunk.js.map": "/alex-dunarentu/form-app.git/static/js/2.67076fda.chunk.js.map",
-    "index.html": "/alex-dunarentu/form-app.git/index.html",
-    "precache-manifest.17dc34c46a11a41f771a1c2615138cf0.js": "/alex-dunarentu/form-app.git/precache-manifest.17dc34c46a11a41f771a1c2615138cf0.js",
-    "service-worker.js": "/alex-dunarentu/form-app.git/service-worker.js",
-    "static/css/main.16b59257.chunk.css.map": "/alex-dunarentu/form-app.git/static/css/main.16b59257.chunk.css.map",
-    "static/js/2.67076fda.chunk.js.LICENSE.txt": "/alex-dunarentu/form-app.git/static/js/2.67076fda.chunk.js.LICENSE.txt"
+    "main.css": "/form-app/static/css/main.16b59257.chunk.css",
+    "main.js": "/form-app/static/js/main.9f5714e5.chunk.js",
+    "main.js.map": "/form-app/static/js/main.9f5714e5.chunk.js.map",
+    "runtime-main.js": "/form-app/static/js/runtime-main.432d0fc3.js",
+    "runtime-main.js.map": "/form-app/static/js/runtime-main.432d0fc3.js.map",
+    "static/js/2.67076fda.chunk.js": "/form-app/static/js/2.67076fda.chunk.js",
+    "static/js/2.67076fda.chunk.js.map": "/form-app/static/js/2.67076fda.chunk.js.map",
+    "index.html": "/form-app/index.html",
+    "precache-manifest.758a56a3f72450779edeb2168299afb3.js": "/form-app/precache-manifest.758a56a3f72450779edeb2168299afb3.js",
+    "service-worker.js": "/form-app/service-worker.js",
+    "static/css/main.16b59257.chunk.css.map": "/form-app/static/css/main.16b59257.chunk.css.map",
+    "static/js/2.67076fda.chunk.js.LICENSE.txt": "/form-app/static/js/2.67076fda.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.21ac1948.js",
+    "static/js/runtime-main.432d0fc3.js",
     "static/js/2.67076fda.chunk.js",
     "static/css/main.16b59257.chunk.css",
-    "static/js/main.3f12537f.chunk.js"
+    "static/js/main.9f5714e5.chunk.js"
   ]
 }
