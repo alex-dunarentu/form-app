@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/alex-dunarentu/form-app.git/static/css/main.16b59257.chunk.css",
+    "main.js": "/alex-dunarentu/form-app.git/static/js/main.3f12537f.chunk.js",
+    "main.js.map": "/alex-dunarentu/form-app.git/static/js/main.3f12537f.chunk.js.map",
+    "runtime-main.js": "/alex-dunarentu/form-app.git/static/js/runtime-main.21ac1948.js",
+    "runtime-main.js.map": "/alex-dunarentu/form-app.git/static/js/runtime-main.21ac1948.js.map",
+    "static/js/2.67076fda.chunk.js": "/alex-dunarentu/form-app.git/static/js/2.67076fda.chunk.js",
+    "static/js/2.67076fda.chunk.js.map": "/alex-dunarentu/form-app.git/static/js/2.67076fda.chunk.js.map",
+    "index.html": "/alex-dunarentu/form-app.git/index.html",
+    "precache-manifest.17dc34c46a11a41f771a1c2615138cf0.js": "/alex-dunarentu/form-app.git/precache-manifest.17dc34c46a11a41f771a1c2615138cf0.js",
+    "service-worker.js": "/alex-dunarentu/form-app.git/service-worker.js",
+    "static/css/main.16b59257.chunk.css.map": "/alex-dunarentu/form-app.git/static/css/main.16b59257.chunk.css.map",
+    "static/js/2.67076fda.chunk.js.LICENSE.txt": "/alex-dunarentu/form-app.git/static/js/2.67076fda.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.21ac1948.js",
+    "static/js/2.67076fda.chunk.js",
+    "static/css/main.16b59257.chunk.css",
+    "static/js/main.3f12537f.chunk.js"
+  ]
+}
