@@ -3,6 +3,7 @@ import FORM_DATA from "./form.data.js";
 import Result from "../result/result.component";
 import Question from "../question/question.component";
 import "./form.styles.scss";
+
 class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -22,10 +23,7 @@ class Form extends React.Component {
       },
       totalScore: 0,
       showResult: false,
-      showR1: false,
-      showR2: false,
-      showR3: false,
-      showR4: false,
+      resultId: ''
     };
   }
 
@@ -46,39 +44,21 @@ class Form extends React.Component {
     for (let i = 0; i < arr.length; i++) {
       count = count + this.state.scores[arr[i]];
     }
+    let resultId = "";
+    if (count === 0) {
+      resultId = "r1";
+    } else if (count > 0 && count <= 2) {
+      resultId = "r2";
+    } else if (count > 2 && count <= 7) {
+      resultId = "r3";
+    } else if (count > 7 && count <= 27) {
+      resultId = "r4";
+    }
     this.setState({
       totalScore: count,
       showResult: true,
+      resultId,
     });
-    if (count === 0) {
-      this.setState({
-        showR1: true,
-        showR2: false,
-        showR3: false,
-        showR4: false,
-      });
-    } else if (count > 0 && count <= 2) {
-      this.setState({
-        showR1: false,
-        showR2: true,
-        showR3: false,
-        showR4: false,
-      });
-    } else if (count > 2 && count <= 7) {
-      this.setState({
-        showR1: false,
-        showR2: false,
-        showR3: true,
-        showR4: false,
-      });
-    } else if (count > 7 && count <= 27) {
-      this.setState({
-        showR1: false,
-        showR2: false,
-        showR3: false,
-        showR4: true,
-      });
-    }
 
     event.preventDefault();
   };
@@ -88,34 +68,17 @@ class Form extends React.Component {
   };
 
   render() {
-    const {
-      questions,
-      showResult,
-      showR1,
-      showR2,
-      showR3,
-      showR4,
-    } = this.state;
+    const { questions, showResult, resultId } = this.state;
     const formContainerClassName = `FormContainer ${
       !showResult ? "IsActive" : ""
     } `;
     const resultContainerClassName = `ResultContainer ${
       showResult ? "IsActive" : ""
     } `;
-    let resultId = "";
-    if (showR1) {
-      resultId = "r1";
-    } else if (showR2) {
-      resultId = "r2";
-    } else if (showR3) {
-      resultId = "r3";
-    } else if (showR4) {
-      resultId = "r4";
-    }
+   
     return (
       <div className="FormComponent">
         <form className={formContainerClassName} onSubmit={this.handleSubmit}>
-          {}
           {questions.map(({ id, answers, title }) => (
             <Question
               key={id}
@@ -128,17 +91,11 @@ class Form extends React.Component {
           <input type="submit" value="Submit" />
         </form>
         <div className={resultContainerClassName}>
-          <div className="Results">
-            <h2>Your score is {this.state.totalScore}</h2>
-            <div className="Diagnosis">
-              <Result
-                id={resultId} //variabila asta este r1 sau r2 sau r3 sau r4
-              />
-            </div>
-            <button type="button" onClick={this.handleBackBtn}>
-              Go back to form
-            </button>
-          </div>
+          <h2>Your score is {this.state.totalScore}</h2>
+          <Result id={resultId} />
+          <button type="button" onClick={this.handleBackBtn}>
+            Go back to form
+          </button>
         </div>
       </div>
     );

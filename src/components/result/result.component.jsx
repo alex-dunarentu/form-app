@@ -19,7 +19,7 @@ const Result = (props) => {
   const text = results[id];
   return (
     <div>
-      <p className="Response IsActive">{text}</p>
+      <p className="Response">{text}</p>
     </div>
   );
 };

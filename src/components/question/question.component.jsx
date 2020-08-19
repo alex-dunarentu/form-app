@@ -16,7 +16,7 @@ const Question = (props) => {
               onChange={(e) => handleChange(name, e)}
               name={name}
               value={value}
-              required
+              required 
             />
             <label htmlFor={id}>{answer}</label>
           </div>
