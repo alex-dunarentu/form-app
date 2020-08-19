@@ -1,8 +1,8 @@
 import React from "react";
 import FORM_DATA from "./form.data.js";
-// import Question from "../question/question.component";
-// import CustomButton from "../custom-button/custom-button.component";
-
+import Result from "../result/result.component";
+import Question from "../question/question.component";
+import "./form.styles.scss";
 class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -20,77 +20,127 @@ class Form extends React.Component {
         q8: 0,
         q9: 0,
       },
+      totalScore: 0,
+      showResult: false,
+      showR1: false,
+      showR2: false,
+      showR3: false,
+      showR4: false,
     };
   }
 
-  handleChange(name, event) {
-    //console.log(event.target.value);
-    // ifurile pentru modificat state
-    console.log("handle change clicked");
-    console.log("event is ", event);
-    console.log("name is", name);
-    if (name === "q1") {
+  handleChange = (name, event) => {
+    this.setState({
+      scores: {
+        ...this.state.scores,
+        [name]: +event.target.value,
+      },
+    });
+  };
+
+  // arrow function, unde este definita functia this = form;
+  // function normal, this tau este unde este apelata functia.
+  handleSubmit = (event) => {
+    let count = 0;
+    const arr = Object.keys(this.state.scores);
+    for (let i = 0; i < arr.length; i++) {
+      count = count + this.state.scores[arr[i]];
+    }
+    this.setState({
+      totalScore: count,
+      showResult: true,
+    });
+    if (count === 0) {
       this.setState({
-        scores: {
-          ...this.state.scores,
-          q1: +event.target.value,
-        },
+        showR1: true,
+        showR2: false,
+        showR3: false,
+        showR4: false,
       });
-    } else if (name === "q2") {
+    } else if (count > 0 && count <= 2) {
       this.setState({
-        scores: {
-          ...this.state.scores,
-          q2: +event.target.value,
-        },
+        showR1: false,
+        showR2: true,
+        showR3: false,
+        showR4: false,
       });
-    } else if (name === "q3") {
+    } else if (count > 2 && count <= 7) {
       this.setState({
-        scores: {
-          ...this.state.scores,
-          q3: +event.target.value,
-        },
+        showR1: false,
+        showR2: false,
+        showR3: true,
+        showR4: false,
+      });
+    } else if (count > 7 && count <= 27) {
+      this.setState({
+        showR1: false,
+        showR2: false,
+        showR3: false,
+        showR4: true,
       });
     }
 
-    setTimeout(() => {
-      console.log("my state is", this.state);
-    }, 2000);
-  }
-
-  handleSubmit(event) {
-    console.log(
-      "Your score is ",
-      this.state.scores.q1 + this.state.scores.q2 + this.state.scores.q3
-    );
     event.preventDefault();
-  }
+  };
+
+  handleBackBtn = () => {
+    this.setState({ showResult: false });
+  };
 
   render() {
-    const { questions } = this.state;
+    const {
+      questions,
+      showResult,
+      showR1,
+      showR2,
+      showR3,
+      showR4,
+    } = this.state;
+    const formContainerClassName = `FormContainer ${
+      !showResult ? "IsActive" : ""
+    } `;
+    const resultContainerClassName = `ResultContainer ${
+      showResult ? "IsActive" : ""
+    } `;
+    let resultId = "";
+    if (showR1) {
+      resultId = "r1";
+    } else if (showR2) {
+      resultId = "r2";
+    } else if (showR3) {
+      resultId = "r3";
+    } else if (showR4) {
+      resultId = "r4";
+    }
     return (
-      <form className="FormContainer" onSubmit={(e) => this.handleSubmit(e)}>
-        {questions.map(({ id, answers, title }) => (
-          <div className="QuestionContainer" key={id}>
-            <div className="QuestionTitle">{title}</div>
-            <div className="QuestionAnswers">
-              {answers.map(({ id, answer, value, name }) => (
-                <div key={id}>
-                  <input
-                    type="radio"
-                    id={id}
-                    onChange={(e) => this.handleChange(name, e)}
-                    name={name}
-                    value={value}
-                    /* required */
-                  />
-                  <label htmlFor={id}>{answer}</label>
-                </div>
-              ))}
+      <div className="FormComponent">
+        <form className={formContainerClassName} onSubmit={this.handleSubmit}>
+          {}
+          {questions.map(({ id, answers, title }) => (
+            <Question
+              key={id}
+              id={id}
+              answers={answers}
+              title={title}
+              handleChange={this.handleChange}
+            />
+          ))}
+          <input type="submit" value="Submit" />
+        </form>
+        <div className={resultContainerClassName}>
+          <div className="Results">
+            <h2>Your score is {this.state.totalScore}</h2>
+            <div className="Diagnosis">
+              <Result
+                id={resultId} //variabila asta este r1 sau r2 sau r3 sau r4
+              />
             </div>
+            <button type="button" onClick={this.handleBackBtn}>
+              Go back to form
+            </button>
           </div>
-        ))}
-        <input type="submit" value="Submit" />
-      </form>
+        </div>
+      </div>
     );
   }
 }

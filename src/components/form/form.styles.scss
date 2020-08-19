@@ -1,0 +1,24 @@
+.ResultContainer {
+  display: none;
+
+  .Response {
+    display: none;
+  }
+
+}
+
+.ResultContainer.IsActive {
+  display: block;
+
+  .IsActive {
+    display: block;
+  }
+}
+
+.FormContainer {
+  display: none;
+}
+
+.FormContainer.IsActive {
+  display: block;
+}
