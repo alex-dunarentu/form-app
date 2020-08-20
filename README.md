@@ -6,19 +6,19 @@ The app has one main class component, named Form which contains the logic inside
 
 ### Form Component
 
-A class component used to store the state that contains the form data and renders the form. It also contains the logic of the evaluation which is handled by the method handleSubmit.
+A container component used to store the state that contains the form data and renders the form. It also contains the logic of the evaluation which is handled by the method handleSubmit.
 
 ### Question Component
 
-Simple functinal component that takes as props a questions title, id and answer as well as a method called handleChange that evaluates your choices and gives you a score based on the answer. It is also responsible for displaying the questions inside our form.
+Presentational component that takes as props a questions title, id and answer as well as a method called handleChange that evaluates your choices and gives you a score based on the answer. It is also responsible for displaying the questions inside our form.
 
 ### Result Component
 
-Also a simple functional component that accepts as prop the id of the result and displays it based on an algorithm that takes in account the score. The results are stored in a object inside the file.
+Also a presentational component that accepts as prop the id of the result and displays it based on an algorithm that takes in account the score. The results are stored in a object inside the file.
 
 ##
 
-The goal of application was to practice what i've learned to a point in a react course.
+The goal of the application was to practice what i've learned to a point in a react course.
 
 ## Available Scripts
 
