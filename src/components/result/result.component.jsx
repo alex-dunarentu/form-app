@@ -12,9 +12,7 @@ const results = {
 };
 
 const Result = (props) => {
-  const {
-    id, //result sa fie r1 sau r2 sau r3 whatever
-  } = props;
+  const { id } = props;
 
   const text = results[id];
   return (

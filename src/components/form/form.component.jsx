@@ -23,7 +23,7 @@ class Form extends React.Component {
       },
       totalScore: 0,
       showResult: false,
-      resultId: ''
+      resultId: "",
     };
   }
 
@@ -75,7 +75,7 @@ class Form extends React.Component {
     const resultContainerClassName = `ResultContainer ${
       showResult ? "IsActive" : ""
     } `;
-   
+
     return (
       <div className="FormComponent">
         <form className={formContainerClassName} onSubmit={this.handleSubmit}>

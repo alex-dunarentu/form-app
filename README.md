@@ -1,4 +1,23 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Creating a survey app
+
+The app has one main class component, named Form which contains the logic inside the application. It is joined by the rest of the components named Question and Result that are simple functional components.
+
+### Form Component
+
+A class component used to store the state that contains the form data and renders the form. It also contains the logic of the evaluation which is handled by the method handleSubmit.
+
+### Question Component
+
+Simple functinal component that takes as props a questions title, id and answer as well as a method called handleChange that evaluates your choices and gives you a score based on the answer. It is also responsible for displaying the questions inside our form.
+
+### Result Component
+
+Also a simple functional component that accepts as prop the id of the result and displays it based on an algorithm that takes in account the score. The results are stored in a object inside the file.
+
+##
+
+The main goal for me was to take a break from a course and practice the stuff i've learned so far with react. 
 
 ## Available Scripts
 
@@ -36,33 +55,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
