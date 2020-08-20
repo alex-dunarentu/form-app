@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## Creating a survey app
 
 The app has one main class component, named Form which contains the logic inside the application. It is joined by the rest of the components named Question and Result that are simple functional components.
@@ -17,7 +18,7 @@ Also a simple functional component that accepts as prop the id of the result and
 
 ##
 
-The main goal for me was to take a break from a course and practice the stuff i've learned so far with react. 
+The goal of application was to practice what i've learned to a point in a react course.
 
 ## Available Scripts
 
